@@ -2,42 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Motekaitis Family Tree</title>
-  <meta name="description" content="The Motekaitis family tree: our ancestors, our branches, and our stories.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Motekaitis Family</title>
+  <meta name="description" content="The Motekaitis family: a living map of the Motekaitis, Tijunelis and Viliunas families, with short biographies and links for each family member.">
   <link rel="canonical" href="https://motekaitis.net/">
+  <meta property="og:title" content="The Motekaitis Family">
+  <meta property="og:description" content="A living map of the Motekaitis family and its branches.">
+  <meta property="og:url" content="https://motekaitis.net/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#e8d8b4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&amp;family=IM+Fell+English+SC&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "The Motekaitis Family Tree",
+    "name": "The Motekaitis Family",
     "url": "https://motekaitis.net/"
   }
   </script>
-  <style>
-    :root { --ink: #2f2a22; --bark: #5b4a36; --leaf: #4f6b3a; --paper: #f6f1e7; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      background: var(--paper); color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif; text-align: center; padding: 2rem;
-    }
-    main { max-width: 36rem; }
-    svg { width: 7rem; height: auto; margin-bottom: 1.5rem; }
-    h1 { font-weight: normal; font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 1rem; letter-spacing: 0.02em; }
-    p { font-size: 1.15rem; line-height: 1.6; color: var(--bark); margin: 0; }
-  </style>
+  <script src="js/mycelium.js" defer></script>
 </head>
 <body>
-  <main>
-    <svg viewBox="0 0 100 110" aria-hidden="true">
-      <path d="M50 105 V60 M50 75 L32 58 M50 68 L68 52" stroke="#5b4a36" stroke-width="5" stroke-linecap="round" fill="none"/>
-      <circle cx="50" cy="38" r="30" fill="#4f6b3a" opacity="0.85"/>
-      <circle cx="30" cy="50" r="16" fill="#4f6b3a" opacity="0.7"/>
-      <circle cx="70" cy="46" r="18" fill="#4f6b3a" opacity="0.7"/>
-    </svg>
+  <header class="site-header">
     <h1>The Motekaitis Family</h1>
-    <p>Our tree is still growing. Check back soon.</p>
+    <p>A living map of our kin</p>
+  </header>
+
+  <main>
+    <!-- The interactive map is drawn here from the family units below. -->
+    <div class="map" data-map></div>
+
+    <!--
+      HOW TO ADD PEOPLE
+      Each family unit is one <article class="family-unit">. A unit is a couple
+      or a single person. The map reads these articles, so they are the data.
+      - Connect a unit to its parents with <a itemprop="parent" href="#person-id">
+        inside each person.
+      - Connect a unit to its children with <a itemprop="children" href="#person-id">
+        in the unit's children list.
+      - Links can point to a person id or a unit id; the map finds the unit.
+      See README.md for a copy-and-paste template.
+    -->
+    <section id="families" aria-label="Family members" data-start="ramunas-veronika">
+
+      <!-- ============ Izabele & Kazimiras ============ -->
+      <article class="family-unit" id="izabele-kazimiras">
+        <h2>Izabele &amp; Kazimiras Motekaitis</h2>
+
+        <section class="person" id="izabele-motekaitis" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#izabele-motekaitis" itemref="children-izabele-kazimiras">
+          <h3 itemprop="name"><span itemprop="givenName">Izabele</span> <span itemprop="familyName">Motekaitis</span></h3>
+          <link itemprop="spouse" href="#kazimiras-motekaitis">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="person" id="kazimiras-motekaitis" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#kazimiras-motekaitis" itemref="children-izabele-kazimiras">
+          <h3 itemprop="name"><span itemprop="givenName">Kazimiras</span> <span itemprop="familyName">Motekaitis</span></h3>
+          <link itemprop="spouse" href="#izabele-motekaitis">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="children">
+          <h3>Children</h3>
+          <ul id="children-izabele-kazimiras">
+            <li><a itemprop="children" href="#ramunas-motekaitis">Ramunas Motekaitis</a></li>
+            <li><a itemprop="children" href="#manigirdas-motekaitis">Manigirdas Motekaitis</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ============ Lucija & Liudas ============ -->
+      <article class="family-unit" id="lucija-liudas">
+        <h2>Lucija Viliunas &amp; Liudas Tijunelis</h2>
+
+        <section class="person" id="lucija-viliunas" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#lucija-viliunas" itemref="children-lucija-liudas">
+          <h3 itemprop="name"><span itemprop="givenName">Lucija</span> <span itemprop="familyName">Viliunas</span></h3>
+          <link itemprop="spouse" href="#liudas-tijunelis">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="person" id="liudas-tijunelis" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#liudas-tijunelis" itemref="children-lucija-liudas">
+          <h3 itemprop="name"><span itemprop="givenName">Liudas</span> <span itemprop="familyName">Tijunelis</span></h3>
+          <link itemprop="spouse" href="#lucija-viliunas">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="children">
+          <h3>Children</h3>
+          <ul id="children-lucija-liudas">
+            <li><a itemprop="children" href="#augustinas-tijunelis">Augustinas Tijunelis</a></li>
+            <li><a itemprop="children" href="#veronika-tijunelis">Veronika Tijunelis</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ============ Manigirdas ============ -->
+      <article class="family-unit" id="manigirdas-motekaitis">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#manigirdas-motekaitis">
+          <h2 itemprop="name"><span itemprop="givenName">Manigirdas</span> <span itemprop="familyName">Motekaitis</span></h2>
+          <p class="lineage">Son of <a itemprop="parent" href="#izabele-motekaitis">Izabele</a> and <a itemprop="parent" href="#kazimiras-motekaitis">Kazimiras Motekaitis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+      <!-- ============ Ramunas & Veronika ============ -->
+      <article class="family-unit" id="ramunas-veronika">
+        <h2>Ramunas Motekaitis &amp; Veronika Tijunelis</h2>
+
+        <section class="person" id="ramunas-motekaitis" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#ramunas-motekaitis" itemref="children-ramunas-veronika">
+          <h3 itemprop="name"><span itemprop="givenName">Ramunas</span> <span itemprop="familyName">Motekaitis</span></h3>
+          <p class="lineage">Son of <a itemprop="parent" href="#izabele-motekaitis">Izabele</a> and <a itemprop="parent" href="#kazimiras-motekaitis">Kazimiras Motekaitis</a></p>
+          <link itemprop="spouse" href="#veronika-tijunelis">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="person" id="veronika-tijunelis" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#veronika-tijunelis" itemref="children-ramunas-veronika">
+          <h3 itemprop="name"><span itemprop="givenName">Veronika</span> <span itemprop="familyName">Tijunelis</span></h3>
+          <p class="lineage">Daughter of <a itemprop="parent" href="#lucija-viliunas">Lucija Viliunas</a> and <a itemprop="parent" href="#liudas-tijunelis">Liudas Tijunelis</a></p>
+          <link itemprop="spouse" href="#ramunas-motekaitis">
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </section>
+
+        <section class="children">
+          <h3>Children</h3>
+          <ul id="children-ramunas-veronika">
+            <li><a itemprop="children" href="#milda-devoe">Milda DeVoe</a></li>
+            <li><a itemprop="children" href="#kazys-motekaitis">Kazys Motekaitis</a></li>
+            <li><a itemprop="children" href="#liudas-motekaitis">Liudas Motekaitis</a></li>
+            <li><a itemprop="children" href="#bronius-motekaitis">Bronius Motekaitis</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ============ Augustinas ============ -->
+      <article class="family-unit" id="augustinas-tijunelis">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#augustinas-tijunelis">
+          <h2 itemprop="name"><span itemprop="givenName">Augustinas</span> <span itemprop="familyName">Tijunelis</span></h2>
+          <p class="lineage">Son of <a itemprop="parent" href="#lucija-viliunas">Lucija Viliunas</a> and <a itemprop="parent" href="#liudas-tijunelis">Liudas Tijunelis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+      <!-- ============ Milda ============ -->
+      <article class="family-unit" id="milda-devoe">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#milda-devoe">
+          <h2 itemprop="name"><span itemprop="givenName">Milda</span> <span itemprop="familyName">DeVoe</span></h2>
+          <p class="lineage">Child of <a itemprop="parent" href="#ramunas-motekaitis">Ramunas Motekaitis</a> and <a itemprop="parent" href="#veronika-tijunelis">Veronika Tijunelis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+      <!-- ============ Kazys ============ -->
+      <article class="family-unit" id="kazys-motekaitis">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#kazys-motekaitis">
+          <h2 itemprop="name"><span itemprop="givenName">Kazys</span> <span itemprop="familyName">Motekaitis</span></h2>
+          <p class="lineage">Child of <a itemprop="parent" href="#ramunas-motekaitis">Ramunas Motekaitis</a> and <a itemprop="parent" href="#veronika-tijunelis">Veronika Tijunelis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+      <!-- ============ Liudas ============ -->
+      <article class="family-unit" id="liudas-motekaitis">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#liudas-motekaitis">
+          <h2 itemprop="name"><span itemprop="givenName">Liudas</span> <span itemprop="familyName">Motekaitis</span></h2>
+          <p class="lineage">Child of <a itemprop="parent" href="#ramunas-motekaitis">Ramunas Motekaitis</a> and <a itemprop="parent" href="#veronika-tijunelis">Veronika Tijunelis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+      <!-- ============ Bronius ============ -->
+      <article class="family-unit" id="bronius-motekaitis">
+        <div class="person" itemscope itemtype="https://schema.org/Person" itemid="https://motekaitis.net/#bronius-motekaitis">
+          <h2 itemprop="name"><span itemprop="givenName">Bronius</span> <span itemprop="familyName">Motekaitis</span></h2>
+          <p class="lineage">Child of <a itemprop="parent" href="#ramunas-motekaitis">Ramunas Motekaitis</a> and <a itemprop="parent" href="#veronika-tijunelis">Veronika Tijunelis</a></p>
+          <div class="bio" itemprop="description"><p>Biography coming soon.</p></div>
+        </div>
+      </article>
+
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>motekaitis.net &middot; a family history, still growing</p>
+  </footer>
 </body>
 </html>
