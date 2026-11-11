@@ -341,3 +341,5 @@ a:hover { text-decoration-color: currentColor; }
   .mg-node, .mg-edge, .lens-arrow { transition: none; animation: none; }
   .map-ready .family-unit.is-focus { animation: none; }
 }
+
+.nickname { margin: -0.2em 0 0.4em; font-style: italic; opacity: 0.85; }
